@@ -9,6 +9,15 @@
 * As redis ensures that the same message will get received by all subscribers , this will overcome the above specified problem.
 
 # Issue while running the app in multiple instances
-* To have high availabiltiy, requests between client and server will get handled by selecting one of instances of the cluster based on load-balancing algorithm.
+* To have high availabiltiy, requests between client and server will get handled by selecting one of instances of the cluster randomly based on load-balancing algorithm.
 * As there will be repeated change of server instances, the socket.io-client connection will get re-connected frequently. If at this re-connection stage, subscriber emit the events, there will be possibilty that the corresponding client may loose the events.
 * To overcome this, we need to maintain **session affinity or sticky session** 
+    * ``` 
+          var expressSession = require('express-session');
+          var cookieParser = require('cookie-parser');
+          var RedisStore = require('connect-redis')(expressSession);
+          var redisClient = redis.createClient(redisConnectionUri);
+          app.use(cookieParser());
+          app.use(expressSession({ key: 'JSESSIONID', secret: 'whatever',
+                                 store: new RedisStore({ client: redisClient})}));
+      ```
