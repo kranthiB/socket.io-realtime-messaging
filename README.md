@@ -21,3 +21,6 @@
           app.use(expressSession({ key: 'JSESSIONID', secret: 'whatever',
                                  store: new RedisStore({ client: redisClient})}));
       ```
+      
+# Sample output (after deploying the app in IBM-Bluemix - 2 instances)
+![realtime-message-viewer](https://user-images.githubusercontent.com/20100300/29750858-e95879de-8b64-11e7-9a39-9452931ffa79.png)
