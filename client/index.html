@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clickstream Analytics Dashboard</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/epoch/0.8.4/css/epoch.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/nv.d3.css">
+
+</head>
+<body>
+  <p id="instance-id" style="display: none;">Instance ID: <span id="instance-id-value"></span></p>
+  <p id="application-id" style="display: none;">Application ID: <span id="application-id-value"></span></p>
+  <div id="kpi"></div>
+  <div id="maps"></div>
+  <div id="graphs">
+    <div class="row">
+      <div class="col m6">
+        <div class="card small">
+          <div class="card-content">
+            <span class="card-title">Bounce Rate</span>
+            <div id="bounceRate" style="height: 220px;" ></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col m6">
+        <div class="card small">
+          <div class="card-content">
+            <span class="card-title">Avg. Time Spent</span>
+            <div id="avgTimeSpent" style="height: 220px;" ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col m6">
+        <div class="card medium">
+          <div class="card-content">
+            <span class="card-title">No. of Visits by Insurance Type</span>
+            <div id="hitsByCategory" style="height: 320px;" ></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col l3">
+        <div class="card medium">
+          <div class="card-content">
+            <span class="card-title">Marketing Channels</span>
+            <div id="topMarketingChannels" style="height: 320px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col l3">
+        <div class="card medium">
+          <div class="card-content">
+            <span class="card-title">Top 10 Bounce rate pages</span>
+            <div id="top10BounceRatePages" style="height: 320px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.5/nv.d3.js.map"></script>
+  <script src="/javascripts/nv.d3.js"></script>
+  <script src='/socket.io/socket.io.js'></script>
+  <script src="/javascripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+applications:
+- path: .
+  memory: 256M
+  instances: 2
+  random-route: true
+  name: loopback-socket-io-message-viewer
+  services:
+    - "Realtime-Message-Hub"
+    - "Compose for Redis-u6"
+    - "Compose for Redis-77"
+env:
+  NODE_ENV: bluemix
+  LOGLEVEL: DEBUG
+  LD_LIBRARY_PATH: $LD_LIBRARY_PATH:/home/vcap/app/node_modules/instantclient

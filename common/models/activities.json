@@ -1,0 +1,100 @@
+{
+  "name": "Activities",
+  "plural": "Activities",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "oracle": {
+      "schema": "KP_WELLNESS_REPOSITORY",
+      "table": "ACTIVITIES"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true,
+      "required": true,
+      "oracle": {
+        "columnName": "ACTIVITY_ID",
+        "dataType": "NUMBER",
+        "dataLength": 10,
+        "nullable": "N"
+      }
+    },
+    "activityName": {
+      "type": "string",
+      "required": true,
+      "oracle": {
+        "columnName": "ACTIVITY_NAME",
+        "dataType": "CHAR",
+        "dataLength": 120,
+        "nullable": "N"
+      }
+    },
+    "activityDescription": {
+      "type": "string",
+      "oracle": {
+        "columnName": "ACTIVITY_DESC",
+        "dataType": "CHAR",
+        "dataLength": 225,
+        "nullable": "Y"
+      }
+    },
+    "createdDate": {
+      "type": "date",
+      "required": true,
+      "length": 11,
+      "precision": null,
+      "scale": 6,
+      "oracle": {
+        "columnName": "CREATED_DATE",
+        "dataType": "TIMESTAMP(6)",
+        "dataLength": 11,
+        "dataPrecision": null,
+        "dataScale": 6,
+        "nullable": "N"
+      }
+    },
+    "modifiedDate": {
+      "type": "date",
+      "required": true,
+      "length": 11,
+      "precision": null,
+      "scale": 6,
+      "defaultFn": "now",
+      "oracle": {
+        "columnName": "MODIFIED_DATE",
+        "dataType": "TIMESTAMP(6)",
+        "dataLength": 11,
+        "dataPrecision": null,
+        "dataScale": 6,
+        "nullable": "N"
+      }
+    },
+    "createdBy": {
+      "type": "string",
+      "required": true,
+      "oracle": {
+        "columnName": "CREATED_BY",
+        "dataType": "CHAR",
+        "dataLength": 45,
+        "nullable": "N"
+      }
+    },
+    "modifiedBy": {
+      "type": "string",
+      "required": true,
+      "oracle": {
+        "columnName": "MODIFIED_BY",
+        "dataType": "CHAR",
+        "dataLength": 45,
+        "nullable": "N"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

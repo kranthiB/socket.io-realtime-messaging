@@ -1,0 +1,52 @@
+
+ .axis {
+  font: 10px sans-serif;
+}
+
+.axis line,
+.axis path {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+/*.chart rect {
+  fill: steelblue;
+}*/
+
+.chart text {
+  fill: white;
+  /*font: 10px sans-serif;*/
+  text-anchor: end;
+}
+
+.card .card-content {
+    padding: 10px;
+}
+
+i.action-icons {
+  cursor: pointer;
+}
+
+a {
+  color: #000000;
+}
+
+.modal {
+  max-height: 90%;
+  width: 90%;
+}
+
+.row {
+  margin-bottom: auto;
+}
